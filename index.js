@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000
 
-app.get('/dashboard', (req, res) => {
+app.get('/api/dashboard', (req, res) => {
   const data = {
-    value1: 1,
-    value2: 2,
-    value3: 3,
-    value4: 4
+    all: Math.floor(Math.random() * 10) + 1,
+    healthy: Math.floor(Math.random() * 10) + 1,
+    suspicious: Math.floor(Math.random() * 10) + 1,
+    infected: Math.floor(Math.random() * 10) + 1,
   };
 
   res.json(data);
