@@ -13,6 +13,13 @@ app.get('/api/dashboard', (req, res) => {
   res.json(data);
 });
 
+app.get('/api/slow-service', (req, res) => {
+  const timeout = req.query.timeout || 10;
+  setTimeout(() => {
+    res.send('Servicio lento');
+  }, timeout);
+});
+
 app.listen( port, () => {
   console.log(`Server running on port ${port} or 3000`);
 });
